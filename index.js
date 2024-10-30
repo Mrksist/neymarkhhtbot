@@ -12,5 +12,5 @@ bot.on('message', (msg)=>{
 })
 
 bot.on('callback_query', (msg) => {
-  console.log(msg);
+  parseInteraction(bot,msg,localization);
 })

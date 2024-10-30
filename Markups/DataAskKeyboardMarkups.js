@@ -12,13 +12,9 @@ const AgeAskKeyboardMarkup = class {
   constructor(localization) {
     let buttonList = [];
     for(var propName in Ages){
-      buttonList.push(new InlineKeyboardButton(Ages[propName].text,Ages[propName].callback));
+      buttonList.push([new InlineKeyboardButton(Ages[propName].text,Ages[propName].callback)]);
     }
-    this.inline_keyboard = [
-      [
-        buttonList
-      ]
-    ]
+    this.inline_keyboard = buttonList
   }
 }
 
@@ -26,13 +22,9 @@ const CourseAskKeyboardMarkup = class {
   constructor(localization) {
     let buttonList = [];
     for(var propName in Courses){
-      buttonList.push(new InlineKeyboardButton(Courses[propName].text,Courses[propName].callback));
+      buttonList.push([new InlineKeyboardButton(Courses[propName].text,Courses[propName].callback)]);
     }
-    this.inline_keyboard = [
-      [
-        buttonList
-      ]
-    ]
+    this.inline_keyboard = buttonList
   }
 }
 
@@ -40,27 +32,26 @@ const CityAskKeyboardMarkup = class {
   constructor(localization) {
     let buttonList = [];
     for(var propName in Cities){
-      buttonList.push(new InlineKeyboardButton(Cities[propName].text,Cities[propName].callback));
+      buttonList.push([new InlineKeyboardButton(Cities[propName].text,Cities[propName].callback)]);
     }
-    this.inline_keyboard = [
-      [
-        buttonList
-      ]
-    ]
+    this.inline_keyboard = buttonList
   }
 }
 
 const UniversityAskKeyboardMarkup = class {
-  constructor(localization) {
+  constructor(localization,city) {
     let buttonList = [];
-    for(var propName in Universities){
-      buttonList.push(new InlineKeyboardButton(Universities[propName].text,Universities[propName].callback));
+    let univs;
+    if(city == Cities.MOSCOW){
+      univs = Universities.Moscow;
     }
-    this.inline_keyboard = [
-      [
-        buttonList
-      ]
-    ]
+    else{
+      univs = Universities.Nizhny;
+    }
+    for(var propName in univs){
+      buttonList.push([new InlineKeyboardButton(univs[propName].text,univs[propName].callback)]);
+    }
+    this.inline_keyboard = buttonList
   }
 }
 
@@ -68,13 +59,9 @@ const SpecialityAskKeyboardMarkup = class {
   constructor(localization) {
     let buttonList = [];
     for(var propName in Specialities){
-      buttonList.push(new InlineKeyboardButton(Specialities[propName].text,Specialities[propName].callback));
+      buttonList.push([new InlineKeyboardButton(Specialities[propName].text,Specialities[propName].callback)]);
     }
-    this.inline_keyboard = [
-      [
-        buttonList
-      ]
-    ]
+    this.inline_keyboard = buttonList
   }
 }
 
