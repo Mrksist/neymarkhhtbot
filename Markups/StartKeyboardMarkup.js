@@ -11,4 +11,17 @@ const StartKeyboardMarkup = class {
   }
 }
 
-module.exports = StartKeyboardMarkup;
+const WasBeforeKeyboardMarkup = class {
+  constructor(localization) {
+    this.inline_keyboard = [
+      [
+        new InlineKeyboardButton(localization.markups.hi.startOver, Callbacks.STARTOVER)
+      ],
+      [
+        new InlineKeyboardButton(localization.markups.hi.goToVacancies, Callbacks.GOTOVACANCIES)
+      ]
+    ]
+  }
+}
+
+module.exports = {StartKeyboardMarkup,WasBeforeKeyboardMarkup};

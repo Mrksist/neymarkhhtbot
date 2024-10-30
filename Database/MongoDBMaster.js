@@ -1,5 +1,3 @@
-'use strict'
-
 const MongoClient = require("mongodb").MongoClient;
 
 const MongoDBMaster = class {
@@ -20,14 +18,4 @@ const MongoDBMaster = class {
   }
 }
 
-//module.exports = MongoDBMaster;
-
-let x = new MongoDBMaster();
-x.connect().then(a => {
-x.sessions.insertOne({
-  id: 1212121212,
-  stage: "AGE"
-});
-})
-
-
+module.exports = MongoDBMaster;

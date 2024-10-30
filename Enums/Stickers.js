@@ -5,6 +5,7 @@ const Stickers = Object.freeze({
   UNIVERSITY: "CAACAgIAAxkBAAEJmKtnIinTcWslLgqfb90MI0nbrXrz9QAC2mcAAiGOEUlQAAEahyAG49w2BA",
   CITY: "CAACAgIAAxkBAAEJmKtnIinTcWslLgqfb90MI0nbrXrz9QAC2mcAAiGOEUlQAAEahyAG49w2BA",
   SPECIALITY: "CAACAgIAAxkBAAEJmKtnIinTcWslLgqfb90MI0nbrXrz9QAC2mcAAiGOEUlQAAEahyAG49w2BA",
+  DATA: "CAACAgIAAxkBAAEJmKtnIinTcWslLgqfb90MI0nbrXrz9QAC2mcAAiGOEUlQAAEahyAG49w2BA",
 });
 
 module.exports = Stickers;

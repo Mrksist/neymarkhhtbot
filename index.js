@@ -5,12 +5,15 @@ const token = require("./token.json").token;
 
 const bot = new TelegramBot(token, {polling: true});
 
-const localization = require("./Lang/Zoomer.json");
+const dbMaster = require("./Database/MongoDBMaster.js");
 
-bot.on('message', (msg)=>{
-  parseCommand(bot,msg,localization);
+const dbmaster = new dbMaster();
+dbmaster.connect()
+
+bot.on('message', (msg) => {
+  parseCommand(bot,msg,dbmaster);
 })
 
 bot.on('callback_query', (msg) => {
-  parseInteraction(bot,msg,localization);
+  parseInteraction(bot,msg,dbmaster);
 })
