@@ -2,6 +2,7 @@
   "name": "neymark-hh-bot",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -9,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "mongodb": "^6.10.0",
     "node-telegram-bot-api": "^0.66.0"
   }
 }

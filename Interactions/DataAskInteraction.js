@@ -10,15 +10,16 @@ const askAge = function(bot, msg, localization){
   bot.sendSticker(msg.message.chat.id, Stickers.AGE).then(()=>{
     bot.sendMessage(msg.message.chat.id, localization.markups.dataAsk.age, 
         {reply_markup: new AgeAskKeyboardMarkup(localization)});
-  });
-}
+  })}
 
 const askCourse = function(bot,msg,localization){
   bot.answerCallbackQuery(msg.id);
   bot.sendSticker(msg.message.chat.id, Stickers.COURSE).then(()=>{
     bot.sendMessage(msg.message.chat.id, localization.markups.dataAsk.course, 
         {reply_markup: new CourseAskKeyboardMarkup(localization)});
-  })
+  }).then(()=>{
+    bot.deleteMessage(msg.message.chat.id, msg.message.message_id);
+  });
 }
 
 const askCity = function(bot,msg,localization){
@@ -26,7 +27,9 @@ const askCity = function(bot,msg,localization){
   bot.sendSticker(msg.message.chat.id, Stickers.CITY).then(()=>{
     bot.sendMessage(msg.message.chat.id, localization.markups.dataAsk.city, 
         {reply_markup: new CityAskKeyboardMarkup(localization)});
-  })
+  }).then(()=>{
+    bot.deleteMessage(msg.message.chat.id, msg.message.message_id);
+  });
 }
 
 const askUniversity = function(bot,msg,localization){
@@ -41,6 +44,8 @@ const askUniversity = function(bot,msg,localization){
   bot.sendSticker(msg.message.chat.id, Stickers.UNIVERSITY).then(()=>{
     bot.sendMessage(msg.message.chat.id, localization.markups.dataAsk.university, 
         {reply_markup: new UniversityAskKeyboardMarkup(localization,city)});
+  }).then(()=>{
+    bot.deleteMessage(msg.message.chat.id, msg.message.message_id);
   });
 }
 
@@ -49,7 +54,9 @@ const askSpeciality = function(bot,msg,localization){
   bot.sendSticker(msg.message.chat.id, Stickers.SPECIALITY).then(()=>{
     bot.sendMessage(msg.message.chat.id, localization.markups.dataAsk.speciality, 
         {reply_markup: new SpecialityAskKeyboardMarkup(localization)});
-  })
+  }).then(()=>{
+    bot.deleteMessage(msg.message.chat.id, msg.message.message_id);
+  });
 }
 
 module.exports = {askAge,askCourse,askCity,askUniversity,askSpeciality};
