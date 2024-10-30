@@ -5,7 +5,7 @@ const StartKeyboardMarkup = class {
   constructor(localization) {
     this.inline_keyboard = [
       [
-        new InlineKeyboardButton(localization, Callbacks.HIBUTTON) 
+        new InlineKeyboardButton(localization.markups.hi.letsgo, Callbacks.HIBUTTON) 
       ]
     ]
   }

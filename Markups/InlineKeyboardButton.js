@@ -1,6 +1,6 @@
 const InlineKeyboardButton = class {
-  constructor(localization,callback_data){
-    this.text = localization.markups.hi.letsgo;
+  constructor(text,callback_data){
+    this.text = text;
     this.callback_data = callback_data;
   }
 }

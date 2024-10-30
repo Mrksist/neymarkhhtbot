@@ -10,7 +10,7 @@ const startCommand = function(bot,msg,localization) {
   // TODO: Make sync with database
 
   if(localization.type.toLowerCase() === "zoomer") {
-    bot.sendSticker(msg.chat.id,"https://src.memorycode.ru/storage/app/public/35011/1686666888.jpg").then(() => {
+    bot.sendSticker(msg.chat.id,"CAACAgIAAxkBAAEJll1nIe_nYa4r_xgrehNatm54a6KeVwACYwADl5B8BxdYFbn-k9ljNgQ").then(() => {
       hiMessage(bot,msg,localization);
     })
   }
