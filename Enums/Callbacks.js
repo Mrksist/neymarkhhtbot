@@ -9,4 +9,4 @@ const Callbacks = Object.freeze({
   SPECIALITY: "speciality"
 });
 
-module.exports = Callbacks
+module.exports = Callbacks;

@@ -1,7 +1,7 @@
 const Callbacks = require("../Enums/Callbacks.js");
 
 const {startCommand,hiMessage} = require("./StartCommand.js");
-const goidaCommand = require("./GoidaCommand.js")
+const {goidaCommand,romaCommand} = require("./GoidaCommand.js")
 
 const zoomer = require("../Lang/Zoomer.json");
 const scoof = require("../Lang/Scoof.json");
@@ -23,6 +23,8 @@ const parseCommand = function (bot,msg,dbmaster) {
       startCommand(bot,msg,localization,dbmaster);
     if(/^\/goida$/.test(msg.text))
       goidaCommand(bot,msg,localization,dbmaster);
+    if(/^\/roma$/.test(msg.text))
+      romaCommand(bot,msg,localization,dbmaster);
   })
 }
 
