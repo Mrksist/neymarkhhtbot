@@ -46,7 +46,6 @@ const checkData = function (bot,msg,localization,dbmaster) {
     res.info.zoomer = true;
     res.info.id = msg.from.id;
 
-    await dbmaster.sessions.deleteMany({id: msg.from.id});
     await dbmaster.users.deleteMany({id: msg.from.id});
     await dbmaster.users.insertOne(res.info);
 

@@ -10,7 +10,7 @@ const askAge = function(bot, msg, localization, dbmaster){
   bot.sendSticker(msg.message.chat.id, Stickers.AGE)
   .then(mes=>{
     return dbmaster.sessions.updateOne({id: msg.from.id}, {$set: {sticker: {chat: mes.chat.id, mes: mes.message_id}}})
-  }).then(()=>{
+  }).then(res=>{
     bot.sendMessage(msg.message.chat.id, localization.markups.dataAsk.age, 
         {reply_markup: new AgeAskKeyboardMarkup(localization)});
   });

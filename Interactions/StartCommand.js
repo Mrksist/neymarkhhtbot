@@ -2,12 +2,10 @@ const Stickers = require("../Enums/Stickers.js");
 const {StartKeyboardMarkup,WasBeforeKeyboardMarkup} = require("../Markups/StartKeyboardMarkup.js");
 
 const hiMessage = function(bot,msg,localization,dbmaster){
-  bot.sendMessage(msg.chat.id, localization.hiMessage, {
-    reply_markup: new StartKeyboardMarkup(localization) 
-  }).then(() => {
-    dbmaster.sessions.deleteMany({id:msg.from.id});
-  }).then(()=>{
-    dbmaster.sessions.insertOne({id:msg.from.id,info: {}});
+  dbmaster.sessions.deleteMany({id: msg.from.id}).then(()=>{
+    return dbmaster.sessions.insertOne({id: msg.from.id,info: {}});
+  }).then(ms=>{
+    bot.sendMessage(msg.chat.id, localization.hiMessage, {reply_markup: new StartKeyboardMarkup(localization)})
   });
 }
 
