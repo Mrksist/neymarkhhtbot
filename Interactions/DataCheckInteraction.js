@@ -10,7 +10,7 @@ const {hiMessage} = require("./StartCommand.js");
 
 const checkData = function (bot,msg,localization,dbmaster) {
   bot.answerCallbackQuery(msg.id);
-  dbmaster.sessions.findOne({id: msg.from.id}).then(res => {
+  dbmaster.sessions.findOne({id: msg.from.id}).then(async (res) => {
     bot.deleteMessage(res.sticker.chat, res.sticker.mes);
     textt = localization.markups.dataCheck.pattern1;
 
@@ -46,8 +46,9 @@ const checkData = function (bot,msg,localization,dbmaster) {
     res.info.zoomer = true;
     res.info.id = msg.from.id;
 
-    dbmaster.users.deleteMany({id: msg.from.id});
-    dbmaster.users.insertOne(res.info);
+    await dbmaster.sessions.deleteMany({id: msg.from.id});
+    await dbmaster.users.deleteMany({id: msg.from.id});
+    await dbmaster.users.insertOne(res.info);
 
     bot.sendMessage(msg.message.chat.id,textt,{
       reply_markup: new WasBeforeKeyboardMarkup(localization)

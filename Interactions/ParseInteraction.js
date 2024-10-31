@@ -38,6 +38,7 @@ const parseInteraction = function(bot,msg,dbmaster){
       localization = scoof;
     }
     if(Callbacks.HIBUTTON === msg.data){
+      bot.editMessageReplyMarkup({inline_keyboard: []},{chat_id: msg.message.chat.id, message_id: msg.message.message_id});
       askAge(bot,msg,localization,dbmaster);
     }
     if(msg.data.startsWith(Callbacks.AGE)){
