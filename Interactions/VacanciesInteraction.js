@@ -4,7 +4,7 @@ const Stickers = require("../Enums/Stickers.js");
 const Specialities = require("../Enums/Specialities.js");
 const Cities = require("../Enums/Cities.js");
 
-const {mosit,nizit,mosbb,nizbb,nizeg,moseg} = require("../Enums/VacancyLists.js");
+const {mosit,nizit,mosbb,nizbb,nizeg,moseg,nizws,mosws} = require("../Enums/VacancyLists.js");
 
 const goToVacancies = function(bot,msg,localization,dbmaster) {
   bot.answerCallbackQuery(msg.id).then(()=>{
@@ -27,6 +27,12 @@ const goToVacancies = function(bot,msg,localization,dbmaster) {
           text += nizeg;
         if(Cities.MOSCOW.callback.endsWith(res.city))
           text += moseg;
+      }
+      if(Specialities.WS.callback.endsWith(res.speciality)){
+        if(Cities.NIZHNY.callback.endsWith(res.city))
+          text += nizws;
+        if(Cities.MOSCOW.callback.endsWith(res.city))
+          text += mosws; 
       }
       bot.sendMessage(msg.message.chat.id,text, {parse_mode: "markdown"}).then(()=>{
         bot.sendMessage(msg.message.chat.id,localization.markups.vacancySelect.question,
