@@ -1,4 +1,4 @@
-const InlineKeyboardButton = require("./InlineKeyboardButton.js");
+const {InlineKeyboardButton} = require("./InlineKeyboardButton.js");
 const Callbacks = require("../Enums/Callbacks.js");
 
 const StartKeyboardMarkup = class {

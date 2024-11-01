@@ -1,5 +1,5 @@
 const Callbacks = require("../Enums/Callbacks.js");
-const InlineKeyboardButton = require("./InlineKeyboardButton.js");
+const {InlineKeyboardButton} = require("./InlineKeyboardButton.js");
 
 const Ages = require("../Enums/Ages.js");
 const Courses = require("../Enums/Courses.js");

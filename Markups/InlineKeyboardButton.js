@@ -5,4 +5,11 @@ const InlineKeyboardButton = class {
   }
 }
 
-module.exports = InlineKeyboardButton;
+const LinkKeyboardButton = class {
+  constructor(text,url){
+    this.text = text;
+    this.url = url;
+  }
+}
+
+module.exports = {InlineKeyboardButton,LinkKeyboardButton};

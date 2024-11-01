@@ -42,7 +42,8 @@ const checkData = function (bot,msg,localization,dbmaster) {
         textt += `Специальность: ${Specialities[key].text}`;
       }
     }
-
+    
+    res.info.speciality = msg.data.split(":")[1];
     res.info.zoomer = true;
     res.info.id = msg.from.id;
 

@@ -11,7 +11,6 @@ const dbmaster = new dbMaster();
 dbmaster.connect()
 
 bot.on('message', (msg) => {
-  //bot.sendMessage(1914333121,"Ты отправляешься на СВО")
   parseCommand(bot,msg,dbmaster);
 })
 

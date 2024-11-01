@@ -7,8 +7,8 @@ const zoomer = require("../Lang/Zoomer.json");
 const scoof = require("../Lang/Scoof.json");
 
 const {askAge,askCourse,askCity,askUniversity,askSpeciality} = require("./DataAskInteraction.js"); 
-const {checkData, startOver} = require("./DataCheckInteraction.js");
-const goToVacancies = require("./VacanciesInteraction.js");
+const {checkData,startOver} = require("./DataCheckInteraction.js");
+const {goToVacancies,vacancySelectAns} = require("./VacanciesInteraction.js");
 
 const parseCommand = function (bot,msg,dbmaster) {
   dbmaster.users.find({id: msg.from.id}).toArray().then(res => {
@@ -61,6 +61,9 @@ const parseInteraction = function(bot,msg,dbmaster){
     }
     if(msg.data.startsWith(Callbacks.GOTOVACANCIES)){
       goToVacancies(bot,msg,localization,dbmaster);
+    }
+    if(msg.data.startsWith(Callbacks.VACANCYANS)){
+      vacancySelectAns(bot,msg,localization,dbmaster);
     }
   })
 }

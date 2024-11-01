@@ -1,6 +1,8 @@
-const Cities = Object.freeze({
-  PMI: {text:"Прикладной МатИнф",callback:"speciality:PMI"},
-  SE: {text:"Прог Инженерия",callback:"speciality:SE"},
+const Specialities = Object.freeze({
+  IT: {text: "Информационные технологии", callback: "speciality:it", filters: "employment=probation&professional_role=156&professional_role=160&professional_role=10&professional_role=12&professional_role=150&professional_role=25&professional_role=165&professional_role=34&professional_role=36&professional_role=73&professional_role=155&professional_role=96&professional_role=164&professional_role=104&professional_role=157&professional_role=107&professional_role=112&professional_role=113&professional_role=148&professional_role=114&professional_role=116&professional_role=121&professional_role=124&professional_role=125&professional_role=126"},
+  BB: {text: "Строительство, недвижимость", callback: "speciality:bb", filters: "employment=probation&professional_role=6&professional_role=14&professional_role=154&professional_role=27&professional_role=30&professional_role=34&professional_role=47&professional_role=45&professional_role=46&professional_role=48&professional_role=59&professional_role=63&professional_role=78&professional_role=100&professional_role=102&professional_role=107&professional_role=108&professional_role=109&professional_role=115&professional_role=143"},
+  WS: {text: "Рабочие специальности", callback: "speciality:ws", filters: "employment=probation&professional_role=5&professional_role=21&professional_role=31&professional_role=52&professional_role=59&professional_role=63&professional_role=173&professional_role=78&professional_role=85&professional_role=86&professional_role=102&professional_role=109&professional_role=111&professional_role=115&professional_role=128&professional_role=131&professional_role=143"},
+  EG: {text: "Юриспруденция и экономика", callback: "speciality:eg",filters:"employment=probation&professional_role=166&professional_role=158&professional_role=145&professional_role=146&professional_role=16&professional_role=154&professional_role=18&professional_role=50&professional_role=57&professional_role=155&professional_role=147&professional_role=134&professional_role=135&professional_role=136&professional_role=137&professional_role=142"},
 });
 
-module.exports = Cities;
+module.exports = Specialities;

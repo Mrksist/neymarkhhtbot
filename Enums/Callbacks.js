@@ -6,7 +6,8 @@ const Callbacks = Object.freeze({
   COURSE: "course",
   CITY: "city",
   UNIVERSITY: "university",
-  SPECIALITY: "speciality"
+  SPECIALITY: "speciality",
+  VACANCYANS: "vacancyans" 
 });
 
 module.exports = Callbacks;
