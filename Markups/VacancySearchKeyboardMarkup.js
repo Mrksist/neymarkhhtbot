@@ -14,7 +14,7 @@ const VacancySearchKeyboardMarkup = class {
     let url = `https://hh.ru/search/vacancy?${spec.filters}`
     this.inline_keyboard = [
       [
-        new LinkKeyboardButton(localization.markups.hi.letsgo, url) 
+        new LinkKeyboardButton(localization.markups.vacancySelect.link, url) 
       ]
     ]
   }
