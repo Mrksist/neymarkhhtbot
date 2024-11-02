@@ -1,7 +1,7 @@
 const VacancyAns = Object.freeze({
     YES: {text: "Да!", callback: "vacancyans:yes"},
-    TL: {text: "Некогда читать", callback: "vacancyans:tl"},
-    NV: {text: "Фигню предложил", callback: "vacancyans:nv"}
+    TL: {text: "У меня нет тайма", callback: "vacancyans:tl"},
+    NV: {text: "Забайтил меня на кринж регаться", callback: "vacancyans:nv"}
 });
 
 module.exports = VacancyAns;
