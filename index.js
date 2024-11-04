@@ -1,19 +1,19 @@
-const TelegramBot = require('node-telegram-bot-api')
-const {parseCommand,parseInteraction} = require("./Interactions/ParseInteraction.js");
+import TelegramBot from 'node-telegram-bot-api';
+import { parseCommand, parseInteraction } from "./Interactions/ParseInteraction.js";
 
-const token = require("./token.json").token;
+import { token } from "./token.json";
 
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(token, { polling: true });
 
-const dbMaster = require("./Database/MongoDBMaster.js");
+import dbMaster from "./Database/MongoDBMaster.js";
 
 const dbmaster = new dbMaster();
 dbmaster.connect()
 
 bot.on('message', (msg) => {
-  parseCommand(bot,msg,dbmaster);
+  parseCommand(bot, msg, dbmaster);
 })
 
 bot.on('callback_query', (msg) => {
-  parseInteraction(bot,msg,dbmaster);
+  parseInteraction(bot, msg, dbmaster);
 })
